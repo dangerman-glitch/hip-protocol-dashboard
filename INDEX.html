@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erica Sheagley - 7-20-26 Hip Protocol</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #090d16;
+            color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #0f172a;
+            border-bottom: 1px solid #1e293b;
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+
+        .brand-text h1 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .brand-text p {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        .maxes-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #020617;
+            border: 1px solid #1e293b;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+        }
+
+        .maxes-bar .val {
+            color: #34d399;
+            font-weight: 700;
+        }
+
+        .divider {
+            width: 1px;
+            height: 12px;
+            background-color: #334155;
+        }
+
+        .timer-widget {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .timer-btn {
+            background: #020617;
+            border: 1px solid #334155;
+            color: #38bdf8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .timer-btn:hover { background: #38bdf8; color: #020617; }
+
+        /* Navigation Tabs */
+        .nav-tabs-bar {
+            background-color: #0f172a;
+            border-bottom: 1px solid #1e293b;
+            padding: 0 20px;
+        }
+
+        .nav-tabs {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 12px 16px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #94a3b8;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            color: #34d399;
+            border-bottom-color: #10b981;
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: #e2e8f0;
+        }
+
+        /* Container Main */
+        main {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 24px 20px;
+            flex: 1;
+        }
+
+        /* Grid layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 20px;
+        }
+
+        /* Cards */
+        .card {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-value {
+            font-size: 26px;
+            font-weight: 800;
+            color: #f8fafc;
+        }
+
+        .card-sub {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* Controls Area */
+        .controls-card {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .btn-group {
+            display: inline-flex;
+            background-color: #020617;
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+            gap: 4px;
+        }
+
+        .select-btn {
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .select-btn.active {
+            background-color: #10b981;
+            color: #ffffff;
+        }
+
+        .day-btn {
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid #1e293b;
+            background-color: #020617;
+            color: #94a3b8;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .day-btn.active {
+            background-color: #1e293b;
+            border-color: #10b981;
+            color: #34d399;
+        }
+
+        /* Banner */
+        .session-banner {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .session-banner h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .session-banner p {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 4px;
+        }
+
+        /* Section Block */
+        .block-section {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .block-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .block-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .dot-amber { background-color: #f59e0b; }
+        .dot-cyan { background-color: #06b6d4; }
+        .dot-emerald { background-color: #10b981; }
+        .dot-purple { background-color: #a855f7; }
+
+        /* Tables */
+        .log-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        .log-table th {
+            text-align: left;
+            padding: 8px 12px;
+            color: #64748b;
+            font-weight: 600;
+            border-bottom: 1px solid #1e293b;
+            text-transform: uppercase;
+        }
+
+        .log-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .input-num {
+            width: 70px;
+            background-color: #020617;
+            border: 1px solid #334155;
+            color: #34d399;
+            font-weight: 700;
+            text-align: center;
+            padding: 4px 6px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        .input-reps {
+            width: 60px;
+            background-color: #020617;
+            border: 1px solid #334155;
+            color: #f8fafc;
+            text-align: center;
+            padding: 4px 6px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 13px;
+        }
+
+        .select-rpe {
+            background-color: #020617;
+            border: 1px solid #334155;
+            color: #cbd5e1;
+            padding: 4px 6px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 12px;
+        }
+
+        .checkbox-custom {
+            width: 18px;
+            height: 18px;
+            accent-color: #10b981;
+            cursor: pointer;
+        }
+
+        /* Checkbox items */
+        .check-card {
+            background-color: #020617;
+            border: 1px solid #1e293b;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .check-card-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .check-card-rx {
+            font-size: 11px;
+            color: #34d399;
+            font-family: monospace;
+            margin-top: 2px;
+        }
+
+        /* Buttons */
+        .btn-action {
+            background-color: #10b981;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-action:hover { background-color: #059669; }
+
+        .btn-secondary {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            cursor: pointer;
+        }
+        .btn-secondary:hover { background-color: #334155; color: #fff; }
+
+        .hidden { display: none !important; }
+
+        footer {
+            border-top: 1px solid #1e293b;
+            background-color: #0f172a;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+            margin-top: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="brand">
+                <div class="avatar">ES</div>
+                <div class="brand-text">
+                    <h1>Erica Sheagley <span class="badge">7-20-26 Hip Protocol</span></h1>
+                    <p>3-Week Lower Body Rehab & Strength Cycle</p>
+                </div>
+            </div>
+
+            <div class="maxes-bar">
+                <div>Squat: <span class="val">137kg</span></div>
+                <div class="divider"></div>
+                <div>DL: <span class="val">130kg</span></div>
+                <div class="divider"></div>
+                <div>Front Sq: <span class="val">114kg</span></div>
+                <div class="divider"></div>
+                <div>Push Press: <span class="val">85kg</span></div>
+            </div>
+
+            <div class="timer-widget">
+                <span>⏱ REST:</span>
+                <span id="timer-text" style="color:#38bdf8; font-weight:700;">00:00</span>
+                <button onclick="toggleTimer()" class="timer-btn">START / PAUSE</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tab Bar -->
+    <div class="nav-tabs-bar">
+        <div class="nav-tabs">
+            <button onclick="switchTab('dashboard')" id="tab-btn-dashboard" class="tab-btn active">📊 Athlete Dashboard</button>
+            <button onclick="switchTab('workout-log')" id="tab-btn-workout-log" class="tab-btn">📋 3-Week Workout Log</button>
+            <button onclick="switchTab('protocol-guide')" id="tab-btn-protocol-guide" class="tab-btn">📖 Hip Protocol Guide</button>
+        </div>
+    </div>
+
+    <!-- Main View -->
+    <main>
+
+        <!-- DASHBOARD TAB -->
+        <section id="tab-dashboard">
+            <div class="grid-4">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Total Tonnage Logged</span>
+                        <span style="color:#10b981;">🏋️</span>
+                    </div>
+                    <div class="card-value" id="dash-total-tonnage">0 kg</div>
+                    <div class="card-sub">+12% target volume progression</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Session Completion</span>
+                        <span style="color:#06b6d4;">✅</span>
+                    </div>
+                    <div class="card-value" id="dash-completion-rate">0 / 12</div>
+                    <div class="card-sub">Sessions Completed</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Current Phase</span>
+                        <span style="color:#a855f7;">⚡</span>
+                    </div>
+                    <div class="card-value" style="font-size:18px;">Hip Centering</div>
+                    <div class="card-sub">Week 1: Base Foundation</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Hip Readiness Index</span>
+                        <span style="color:#f59e0b;">❤️</span>
+                    </div>
+                    <div class="card-value" style="color:#34d399;">8.5 / 10</div>
+                    <div class="card-sub">Zero pinch in deep flexion</div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <!-- SVG Chart Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">3-Week Volume Progression Curve</span>
+                        <span style="font-size:11px; color:#94a3b8;">Target vs Actual Tonnage</span>
+                    </div>
+                    <div style="height: 200px; width: 100%; margin-top: 10px;">
+                        <svg viewBox="0 0 500 160" style="width:100%; height:100%; overflow:visible;">
+                            <!-- Lines -->
+                            <line x1="0" y1="30" x2="500" y2="30" stroke="#1e293b" stroke-dasharray="3"/>
+                            <line x1="0" y1="70" x2="500" y2="70" stroke="#1e293b" stroke-dasharray="3"/>
+                            <line x1="0" y1="110" x2="500" y2="110" stroke="#1e293b" stroke-dasharray="3"/>
+                            <line x1="0" y1="150" x2="500" y2="150" stroke="#334155"/>
+
+                            <!-- Shaded target area -->
+                            <polygon points="20,130 60,110 100,120 140,95 180,115 220,90 260,105 300,75 340,95 380,65 420,80 460,40 460,150 20,150" fill="rgba(16, 185, 129, 0.12)"/>
+                            
+                            <!-- Polyline curve -->
+                            <polyline points="20,130 60,110 100,120 140,95 180,115 220,90 260,105 300,75 340,95 380,65 420,80 460,40" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+
+                            <!-- Points -->
+                            <circle cx="20" cy="130" r="4" fill="#10b981"/>
+                            <circle cx="60" cy="110" r="4" fill="#10b981"/>
+                            <circle cx="100" cy="120" r="4" fill="#10b981"/>
+                            <circle cx="140" cy="95" r="4" fill="#10b981"/>
+                            <circle cx="180" cy="115" r="4" fill="#10b981"/>
+                            <circle cx="220" cy="90" r="4" fill="#10b981"/>
+                            <circle cx="260" cy="105" r="4" fill="#10b981"/>
+                            <circle cx="300" cy="75" r="4" fill="#10b981"/>
+                            <circle cx="340" cy="95" r="4" fill="#10b981"/>
+                            <circle cx="380" cy="65" r="4" fill="#10b981"/>
+                            <circle cx="420" cy="80" r="4" fill="#10b981"/>
+                            <circle cx="460" cy="40" r="5" fill="#38bdf8"/>
+                        </svg>
+                        <div style="display:flex; justify-content:space-between; font-size:10px; color:#64748b; font-family:monospace; margin-top:8px;">
+                            <span>W1D1</span><span>W1D2</span><span>W1D3</span><span>W1D4</span>
+                            <span>W2D1</span><span>W2D2</span><span>W2D3</span><span>W2D4</span>
+                            <span>W3D1</span><span>W3D2</span><span>W3D3</span><span>W3D4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maxes Table -->
+                <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
+                    <div>
+                        <div class="card-header">
+                            <span class="card-title">Erica's Strength Maxes Reference</span>
+                        </div>
+                        <table style="width:100%; font-size:12px; border-collapse:collapse; margin-top:8px;">
+                            <tr style="border-bottom:1px solid #1e293b;">
+                                <td style="padding:8px 0; color:#cbd5e1;">Back Squat</td>
+                                <td style="text-align:right; font-weight:700; color:#34d399;">137 kg (302 lbs)</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #1e293b;">
+                                <td style="padding:8px 0; color:#cbd5e1;">Deadlift</td>
+                                <td style="text-align:right; font-weight:700; color:#34d399;">130 kg (286 lbs)</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #1e293b;">
+                                <td style="padding:8px 0; color:#cbd5e1;">Front Squat</td>
+                                <td style="text-align:right; font-weight:700; color:#34d399;">114 kg (251 lbs)</td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #1e293b;">
+                                <td style="padding:8px 0; color:#cbd5e1;">Push Press</td>
+                                <td style="text-align:right; font-weight:700; color:#34d399;">85 kg (187 lbs)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:8px 0; color:#cbd5e1;">Clean & Jerk / Snatch</td>
+                                <td style="text-align:right; font-weight:700; color:#34d399;">105 kg / 81 kg</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button onclick="switchTab('workout-log')" class="btn-action" style="width:100%; margin-top:16px;">
+                        Open 3-Week Log →
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKOUT LOG TAB -->
+        <section id="tab-workout-log" class="hidden">
+            <!-- Controls -->
+            <div class="controls-card">
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:12px; font-weight:700; color:#94a3b8; text-transform:uppercase;">Select Week:</span>
+                    <div class="btn-group">
+                        <button onclick="selectWeek(1)" id="week-btn-1" class="select-btn active">Week 1 (Base)</button>
+                        <button onclick="selectWeek(2)" id="week-btn-2" class="select-btn">Week 2 (+5%)</button>
+                        <button onclick="selectWeek(3)" id="week-btn-3" class="select-btn">Week 3 (Peak)</button>
+                    </div>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:12px; font-weight:700; color:#94a3b8; text-transform:uppercase;">Select Day:</span>
+                    <div style="display:flex; gap:6px;">
+                        <button onclick="selectDay(1)" id="day-btn-1" class="day-btn active">Day 1</button>
+                        <button onclick="selectDay(2)" id="day-btn-2" class="day-btn">Day 2</button>
+                        <button onclick="selectDay(3)" id="day-btn-3" class="day-btn">Day 3</button>
+                        <button onclick="selectDay(4)" id="day-btn-4" class="day-btn">Day 4</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Banner -->
+            <div class="session-banner">
+                <div>
+                    <div style="display:flex; gap:8px; margin-bottom:6px;">
+                        <span id="log-week-badge" class="badge">Week 1 Protocol</span>
+                        <span id="log-day-badge" class="badge" style="background:rgba(6,182,212,0.15); color:#38bdf8; border-color:rgba(6,182,212,0.3);">Day 1</span>
+                    </div>
+                    <h2 id="log-session-title">2 KB Goblet Squat Density & Z-Press</h2>
+                    <p id="log-session-subtitle">Focus: Goblet Density, Z-Press Overhead Posture & Single Leg Lunges</p>
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <button onclick="startQuickTimer(90)" class="btn-secondary">⏱ Rest 90s</button>
+                    <button onclick="saveCurrentDayLog()" class="btn-action">💾 Save Workout</button>
+                </div>
+            </div>
+
+            <!-- Block 1: Warmup -->
+            <div class="block-section">
+                <div class="block-header">
+                    <div class="block-title"><span class="dot dot-amber"></span> Block 1: Warm Up & Preparation</div>
+                    <span style="font-size:12px; color:#64748b;">Complete before main lifts</span>
+                </div>
+                <div id="warmup-checklist" class="grid-3"></div>
+            </div>
+
+            <!-- Block 2: Isometrics -->
+            <div class="block-section">
+                <div class="block-header">
+                    <div class="block-title"><span class="dot dot-cyan"></span> Block 2: Isometrics & Dynamic Primers</div>
+                    <span style="font-size:12px; color:#64748b;">30s - 60s holds</span>
+                </div>
+                <div id="isos-plyos-container" class="grid-2"></div>
+            </div>
+
+            <!-- Block 3: Primary Lifts -->
+            <div class="block-section">
+                <div class="block-header">
+                    <div class="block-title"><span class="dot dot-emerald"></span> Block 3: Primary Workout Lifts & Set Logging</div>
+                    <span style="font-size:12px; color:#64748b;">Log weight, reps, and RPE</span>
+                </div>
+                <div id="exercises-container" style="display:flex; flex-direction:column; gap:20px;"></div>
+            </div>
+
+            <!-- Block 4: Accessory -->
+            <div class="block-section">
+                <div class="block-header">
+                    <div class="block-title"><span class="dot dot-purple"></span> Block 4: Accessory & Core Finishers</div>
+                </div>
+                <div id="accessory-container" class="grid-2"></div>
+            </div>
+        </section>
+
+        <!-- PROTOCOL GUIDE TAB -->
+        <section id="tab-protocol-guide" class="hidden">
+            <div class="card">
+                <h2 style="font-size:18px; font-weight:800; color:#fff; margin-bottom:6px;">7-20-26 Hip Protocol Directory</h2>
+                <p style="font-size:12px; color:#94a3b8; margin-bottom:20px;">Detailed execution cues and target outcomes from Coach Dan's programming for Erica Sheagley.</p>
+
+                <div class="grid-2">
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <h3 style="font-size:13px; font-weight:700; color:#34d399; border-bottom:1px solid #1e293b; padding-bottom:6px;">Primary Strength Lifts</h3>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">2 KB Goblet Squat (12 min density block)</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">Accumulate volume in 5-rep sets. Promotes upright torso and deep hip flexor positioning without impingement.</p>
+                        </div>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">Kickstand Trapbar Deadlift</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">3 x 6 / side, then 3 x 3 / side. Keep 90% load on front leg. Build posterior chain force transfer.</p>
+                        </div>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">Zercher Squat</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">12-14 min timed block. Bar in elbow crease forces maximum core bracing and removes spinal shear load.</p>
+                        </div>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">Box Safety Bar Squat</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">Work up 2x5, 2x3, 2-3x2 at parallel box. Controlled pause without de-bracing torso.</p>
+                        </div>
+                    </div>
+
+                    <div style="display:flex; flex-direction:column; gap:12px;">
+                        <h3 style="font-size:13px; font-weight:700; color:#38bdf8; border-bottom:1px solid #1e293b; padding-bottom:6px;">Rehab & Isometric Prep</h3>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">Closed Chain Hip Lock</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">3 x 5 / side. Activates gluteus medius and deep rotators for dynamic pelvic stability.</p>
+                        </div>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">Kickstand ISO + Wall RDL</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">2 x 1 min holds per side. Builds tendon stiffness and hamstring origin loading.</p>
+                        </div>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">Wall Squat w/ Goblet Hold + Hip Airplane</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">Opens up posterior hip capsule and trains internal/external rotation control under load.</p>
+                        </div>
+                        <div class="check-card" style="flex-direction:column;">
+                            <span class="check-card-title">Floating Heel RDL to Hip Lock</span>
+                            <p style="font-size:12px; color:#94a3b8; margin-top:4px;">Foot on wedge. Trains Achilles tendon spring and explosive lockout at top of extension.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Erica Sheagley 2026 Training System • 7-20-26 Hip Protocol Interactive Application
+    </footer>
+
+    <!-- Application JavaScript Logic -->
+    <script>
+        // 7-20-26 Hip Program Master Data
+        const PROGRAM_DATA = {
+            1: {
+                title: "2 KB Goblet Squat & Alternating Z-Press",
+                subtitle: "Focus: Goblet Density, Z-Press Overhead Posture & Single Leg Lunges",
+                warmup: [
+                    { name: "Bottoms Up Armbar", rx: "2 x 1 min / side" },
+                    { name: "TGU to Sit Through", rx: "4 x 3 reps / side" },
+                    { name: "Closed Chain Hip Lock", rx: "3 x 5 / side" }
+                ],
+                isos: [
+                    { name: "Kickstand ISO Hold", rx: "2 x 1 min per side" },
+                    { name: "Wall RDL (Superset)", rx: "2 x 10 / side" },
+                    { name: "Seated Box Jumps", rx: "3 x 5 reps" },
+                    { name: "Skater Jumps", rx: "2 x 5 / side" }
+                ],
+                exercises: [
+                    { id: "ex_d1_1", name: "2 KB Goblet Squat", desc: "Sets of 5 reps • 12 min density block.", prescribedSets: 5, defaultReps: 5, targetKg: 24 },
+                    { id: "ex_d1_2", name: "Alternating Z Press", desc: "4-5 sets x 6 reps per side. Tall posture from floor.", prescribedSets: 4, defaultReps: 6, targetKg: 16 },
+                    { id: "ex_d1_3", name: "Walking Lunges (2 DBs)", desc: "4 sets x 8 reps / side.", prescribedSets: 4, defaultReps: 8, targetKg: 20 },
+                    { id: "ex_d1_4", name: "Dips", desc: "3 sets: 1 warm-up set, 2 hard effort sets.", prescribedSets: 3, defaultReps: 10, targetKg: 0 }
+                ],
+                accessory: [
+                    { name: "Side Plank Hold", rx: "2 x 20 sec / side" },
+                    { name: "Hollow Body Hold", rx: "2 x 30 sec hold" }
+                ]
+            },
+            2: {
+                title: "Kickstand Trapbar DL & Knee Height Step Ups",
+                subtitle: "Focus: Posterior Chain Load & Single Leg Power",
+                warmup: [
+                    { name: "TGU to Bridge", rx: "2 x 3 / side" },
+                    { name: "Wall Supported RDL", rx: "3 x 10 / side" },
+                    { name: "Long Lever Hamstring Bridge", rx: "3 x 30 sec hold" }
+                ],
+                isos: [
+                    { name: "Wall Squat w/ Goblet Hold", rx: "3 x 1 min hold (High Squat)" },
+                    { name: "Hip Airplane (Superset)", rx: "3 x 10 / side" }
+                ],
+                exercises: [
+                    { id: "ex_d2_1", name: "Kickstand Trapbar Deadlift", desc: "3 x 6 / side, then 3 x 3 / side. Drive lead heel.", prescribedSets: 6, defaultReps: 3, targetKg: 75 },
+                    { id: "ex_d2_2", name: "Step Up (Loaded Trail Side)", desc: "4 x 6 / side. Knee height box.", prescribedSets: 4, defaultReps: 6, targetKg: 18 },
+                    { id: "ex_d2_3", name: "Floating Heel RDL to Hip Lock", desc: "3 x 10 / side. Foot on wedge.", prescribedSets: 3, defaultReps: 10, targetKg: 20 },
+                    { id: "ex_d2_4", name: "Chin Up", desc: "3 x max reps with pause at top.", prescribedSets: 3, defaultReps: 8, targetKg: 0 }
+                ],
+                accessory: [
+                    { name: "Single Leg Glute Bridge", rx: "2 x 10 / leg" },
+                    { name: "Banded Clam Shells", rx: "2 x 10 / side" }
+                ]
+            },
+            3: {
+                title: "Zercher Squat & 2 KB Push Press Density",
+                subtitle: "Focus: Core Bracing, Upper Back Density & Zercher Step-Ups",
+                warmup: [
+                    { name: "Bottoms Up Armbar", rx: "2 x 1 min" },
+                    { name: "TGU to Sit Through", rx: "4 x 3 / side" },
+                    { name: "Closed Chain Hip Lock", rx: "3 x 5 / side" }
+                ],
+                isos: [
+                    { name: "Split Squat ISO (Barbell Loaded)", rx: "3 x 30 sec / side" },
+                    { name: "Wall RDL (Superset)", rx: "2 x 10 / side" }
+                ],
+                exercises: [
+                    { id: "ex_d3_1", name: "Zercher Squat", desc: "Sets of 3 • 12-14 min work up block.", prescribedSets: 5, defaultReps: 3, targetKg: 70 },
+                    { id: "ex_d3_2", name: "2 KB Push Press", desc: "8 min volume accumulation block. Pause overhead.", prescribedSets: 4, defaultReps: 5, targetKg: 20 },
+                    { id: "ex_d3_3", name: "Step Up (Zercher Loaded)", desc: "Step to 6 inch block + lid. 4 x 8 reps.", prescribedSets: 4, defaultReps: 8, targetKg: 35 }
+                ],
+                accessory: [
+                    { name: "Weighted Ring Dips", rx: "2 x 6 reps" },
+                    { name: "Ring Row Static Hold", rx: "2 x 20 sec hold" }
+                ]
+            },
+            4: {
+                title: "Box Safety Bar Squat & Barbell Z-Press",
+                subtitle: "Focus: Parallel Box Explosiveness, Pressing Progression & Single Leg RDL",
+                warmup: [
+                    { name: "TGU to Bridge", rx: "2 x 3 / side" },
+                    { name: "Wall Supported RDL", rx: "3 x 10 / side" },
+                    { name: "Long Lever Hamstring Bridge", rx: "3 x 30 sec" }
+                ],
+                isos: [
+                    { name: "Wall Squat w/ Goblet Hold", rx: "3 x 1 min hold" },
+                    { name: "Hip Airplane", rx: "3 x 10 / side" },
+                    { name: "Respiratory Squat on Wedges", rx: "3 x 5 reps" }
+                ],
+                exercises: [
+                    { id: "ex_d4_1", name: "Box Safety Bar Squat", desc: "2 x 5, 2 x 3, 2-3 x 2 at parallel height.", prescribedSets: 6, defaultReps: 3, targetKg: 85 },
+                    { id: "ex_d4_2", name: "Barbell Z Press", desc: "1 x 8, 3 x 5, 3 x 3. Strict floor position.", prescribedSets: 7, defaultReps: 5, targetKg: 40 },
+                    { id: "ex_d4_3", name: "Landmine RDL (Single Leg)", desc: "Rear foot off floor. 4 x 8 / side.", prescribedSets: 4, defaultReps: 8, targetKg: 30 }
+                ],
+                accessory: [
+                    { name: "Side Planks / Core", rx: "3 x 30 sec / side" },
+                    { name: "Thorax Rotations", rx: "2 x 10 / side" }
+                ]
+            }
+        };
+
+        // Application State
+        let state = {
+            currentTab: 'dashboard',
+            currentWeek: 1,
+            currentDay: 1,
+            userLogs: {},
+            timerInterval: null,
+            timerSeconds: 0,
+            timerRunning: false
+        };
+
+        function getWeekMultiplier(week) {
+            if (week === 2) return 1.05;
+            if (week === 3) return 1.10;
+            return 1.00;
+        }
+
+        // Tab Switching
+        function switchTab(tabId) {
+            state.currentTab = tabId;
+            ['dashboard', 'workout-log', 'protocol-guide'].forEach(t => {
+                const el = document.getElementById(`tab-${t}`);
+                const btn = document.getElementById(`tab-btn-${t}`);
+                if (t === tabId) {
+                    el.classList.remove('hidden');
+                    btn.classList.add('active');
+                } else {
+                    el.classList.add('hidden');
+                    btn.classList.remove('active');
+                }
+            });
+
+            if (tabId === 'dashboard') {
+                updateDashboardData();
+            }
+        }
+
+        // Week and Day Selectors
+        function selectWeek(weekNum) {
+            state.currentWeek = weekNum;
+            for (let i = 1; i <= 3; i++) {
+                const btn = document.getElementById(`week-btn-${i}`);
+                if (i === weekNum) btn.classList.add('active');
+                else btn.classList.remove('active');
+            }
+            renderWorkoutLog();
+        }
+
+        function selectDay(dayNum) {
+            state.currentDay = dayNum;
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById(`day-btn-${i}`);
+                if (i === dayNum) btn.classList.add('active');
+                else btn.classList.remove('active');
+            }
+            renderWorkoutLog();
+        }
+
+        // Render Workout Log
+        function renderWorkoutLog() {
+            const dayData = PROGRAM_DATA[state.currentDay];
+            const multiplier = getWeekMultiplier(state.currentWeek);
+
+            document.getElementById('log-week-badge').innerText = `Week ${state.currentWeek} Protocol`;
+            document.getElementById('log-day-badge').innerText = `Day ${state.currentDay}`;
+            document.getElementById('log-session-title').innerText = dayData.title;
+            document.getElementById('log-session-subtitle').innerText = dayData.subtitle;
+
+            // Block 1 Warmup
+            document.getElementById('warmup-checklist').innerHTML = dayData.warmup.map(item => `
+                <div class="check-card">
+                    <input type="checkbox" class="checkbox-custom">
+                    <div>
+                        <div class="check-card-title">${item.name}</div>
+                        <div class="check-card-rx">${item.rx}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Block 2 Isos
+            document.getElementById('isos-plyos-container').innerHTML = dayData.isos.map(item => `
+                <div class="check-card" style="justify-content:space-between; align-items:center;">
+                    <div>
+                        <div class="check-card-title">${item.name}</div>
+                        <div class="check-card-rx" style="color:#38bdf8;">${item.rx}</div>
+                    </div>
+                    <button onclick="startQuickTimer(60)" class="btn-secondary" style="padding:4px 8px; font-size:11px;">⏱ 60s Hold</button>
+                </div>
+            `).join('');
+
+            // Block 3 Primary Exercises
+            document.getElementById('exercises-container').innerHTML = dayData.exercises.map(ex => {
+                const targetWeight = Math.round(ex.targetKg * multiplier);
+
+                let setRowsHtml = '';
+                for (let s = 1; s <= ex.prescribedSets; s++) {
+                    const logKey = `w${state.currentWeek}_d${state.currentDay}_${ex.id}_s${s}`;
+                    const saved = state.userLogs[logKey] || { kg: targetWeight, reps: ex.defaultReps, rpe: 8, done: false };
+
+                    setRowsHtml += `
+                        <tr>
+                            <td style="color:#94a3b8; font-family:monospace;">Set ${s}</td>
+                            <td>
+                                <input type="number" id="${logKey}_kg" value="${saved.kg}" onchange="updateLog('${logKey}')" class="input-num">
+                            </td>
+                            <td>
+                                <input type="number" id="${logKey}_reps" value="${saved.reps}" onchange="updateLog('${logKey}')" class="input-reps">
+                            </td>
+                            <td>
+                                <select id="${logKey}_rpe" onchange="updateLog('${logKey}')" class="select-rpe">
+                                    ${[6, 7, 7.5, 8, 8.5, 9, 9.5, 10].map(rpe => `<option value="${rpe}" ${saved.rpe == rpe ? 'selected' : ''}>${rpe}</option>`).join('')}
+                                </select>
+                            </td>
+                            <td style="text-align:center;">
+                                <input type="checkbox" id="${logKey}_done" ${saved.done ? 'checked' : ''} onchange="updateLog('${logKey}')" class="checkbox-custom">
+                            </td>
+                        </tr>
+                    `;
+                }
+
+                return `
+                    <div style="background-color:#020617; border:1px solid #1e293b; border-radius:10px; padding:16px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+                            <div>
+                                <h4 style="font-size:14px; font-weight:700; color:#f8fafc;">${ex.name} <span style="font-size:10px; background:#1e293b; color:#34d399; padding:2px 6px; border-radius:4px; font-family:monospace;">Target: ~${targetWeight}kg</span></h4>
+                                <p style="font-size:11px; color:#94a3b8; margin-top:2px;">${ex.desc}</p>
+                            </div>
+                            <span style="font-size:11px; font-family:monospace; color:#94a3b8; background:#0f172a; padding:4px 8px; border-radius:4px; border:1px solid #1e293b;">
+                                ${ex.prescribedSets} Sets x ${ex.defaultReps} Reps
+                            </span>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="log-table">
+                                <thead>
+                                    <tr>
+                                        <th>Set</th>
+                                        <th>Weight (kg)</th>
+                                        <th>Reps Logged</th>
+                                        <th>RPE</th>
+                                        <th style="text-align:center;">Done</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${setRowsHtml}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Block 4 Accessory
+            document.getElementById('accessory-container').innerHTML = dayData.accessory.map(item => `
+                <div class="check-card" style="justify-content:space-between; align-items:center;">
+                    <div>
+                        <div class="check-card-title">${item.name}</div>
+                        <div class="check-card-rx" style="color:#a855f7;">${item.rx}</div>
+                    </div>
+                    <input type="checkbox" class="checkbox-custom">
+                </div>
+            `).join('');
+        }
+
+        // Update Log Record
+        function updateLog(logKey) {
+            const kg = parseFloat(document.getElementById(`${logKey}_kg`)?.value || 0);
+            const reps = parseInt(document.getElementById(`${logKey}_reps`)?.value || 0);
+            const rpe = parseFloat(document.getElementById(`${logKey}_rpe`)?.value || 8);
+            const done = document.getElementById(`${logKey}_done`)?.checked || false;
+
+            state.userLogs[logKey] = { kg, reps, rpe, done };
+
+            if (done) startQuickTimer(90);
+            updateDashboardData();
+        }
+
+        function saveCurrentDayLog() {
+            updateDashboardData();
+            alert(`Logged workout for Week ${state.currentWeek}, Day ${state.currentDay}!`);
+        }
+
+        function updateDashboardData() {
+            let totalTonnage = 0;
+            let completedSetsCount = 0;
+
+            Object.keys(state.userLogs).forEach(key => {
+                const entry = state.userLogs[key];
+                if (entry.done) {
+                    totalTonnage += (entry.kg * entry.reps);
+                    completedSetsCount++;
+                }
+            });
+
+            const tonnageEl = document.getElementById('dash-total-tonnage');
+            if (tonnageEl) tonnageEl.innerText = `${totalTonnage.toLocaleString()} kg`;
+
+            const completionRateEl = document.getElementById('dash-completion-rate');
+            const daysCompleted = Math.min(12, Math.floor(completedSetsCount / 8)); 
+            if (completionRateEl) completionRateEl.innerText = `${daysCompleted} / 12`;
+        }
+
+        // Timer Logic
+        function startQuickTimer(seconds) {
+            state.timerSeconds = seconds;
+            state.timerRunning = true;
+            updateTimerDisplay();
+
+            if (state.timerInterval) clearInterval(state.timerInterval);
+
+            state.timerInterval = setInterval(() => {
+                if (state.timerSeconds > 0) {
+                    state.timerSeconds--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(state.timerInterval);
+                    state.timerRunning = false;
+                    document.getElementById('timer-text').innerText = "DONE!";
+                }
+            }, 1000);
+        }
+
+        function toggleTimer() {
+            if (state.timerRunning) {
+                clearInterval(state.timerInterval);
+                state.timerRunning = false;
+            } else if (state.timerSeconds > 0) {
+                startQuickTimer(state.timerSeconds);
+            } else {
+                startQuickTimer(90);
+            }
+        }
+
+        function updateTimerDisplay() {
+            const m = Math.floor(state.timerSeconds / 60);
+            const s = state.timerSeconds % 60;
+            document.getElementById('timer-text').innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            selectWeek(1);
+            selectDay(1);
+            updateDashboardData();
+        };
+    </script>
+</body>
+</html>
